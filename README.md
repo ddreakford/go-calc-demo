@@ -29,32 +29,28 @@ Content-Type: application/json
 
 ## Branches
 
-### master
- contains the code for the demo
+### `master`
+Code for the demo
+
+    git clone https://github.com/liornabat-sealights/go-calc-demo.git ./repo/go-calc-demo
  
 
-### change
- contains the code for the demo with the changes:
- - add a new func to the calc file - Power
- - change to the Add func 
+### `change`
+Demo with "pre made" code changes (to show Modified Coverage and Quality Risks)
+
+    git clone -b change  https://github.com/liornabat-sealights/go-calc-demo.git ./repo/go-calc-demo
+
+ - Adds a new func to the calc file - `Power`
+ - Changes the `Add` func
 
 
-## Instrumentation and scanning
+## Instrumentation, scanning and test monitoring
+See [onboard_to_sealights.sh](https://github.com/ddreakford/go-calc-demo/blob/main/onboard_to_sealights.sh)
 
-Two .exe files are included in the repo:
- - sl.exe - this is the agent
- - slcli.exe - this is the cli tool
-
-Steps to run the instrumentation and scanning the master / change:
-1. git clone https://github.com/liornabat-sealights/go-calc-demo.git ./repo/go-calc-demo
-  or git clone -b change  https://github.com/liornabat-sealights/go-calc-demo.git ./repo/go-calc-demo
-2. ./slcli config init --lang go --token ./token.txt
-3. ./slcli config create-bsid --app go-calc-demo --branch master --build <<build number
-4. ./slcli.exe scan  --bsid buildSessionId.txt --path-to-scanner ./sl.exe --workspacepath ./repo/go-calc-demo --scm git --scmBaseUrl aaa --scmVersion "0" --scmProvider github
 
 ## Unit Tests
-Run:
-1. go test -v ./...
+
+    go test -v
 
 
 
