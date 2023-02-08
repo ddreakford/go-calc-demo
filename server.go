@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 	"net/http"
 	"time"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 type Server struct {
@@ -37,7 +38,7 @@ func (s *Server) Start(ctx context.Context) error {
 	s.echoWebServer = e
 	errCh := make(chan error, 1)
 	go func() {
-		errCh <- s.echoWebServer.Start("0.0.0.0:8080")
+		errCh <- s.echoWebServer.Start("0.0.0.0:8093")
 	}()
 
 	select {
@@ -45,7 +46,7 @@ func (s *Server) Start(ctx context.Context) error {
 		if err != nil {
 			return err
 		}
-		e.Logger.Infof("api server started at port 8080")
+		e.Logger.Infof("api server started at port 8093")
 		return nil
 	case <-time.After(1 * time.Second):
 		return nil

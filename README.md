@@ -10,20 +10,20 @@
 ## Api Endpoints
 
 ### /add
-GET http://localhost:8080/add?a=1&b=2
+GET http://localhost:8093/add?a=1&b=2
 Content-Type: application/json
 
 ### /sub
-GET http://localhost:8080/sub?a=1&b=2
+GET http://localhost:8093/sub?a=1&b=2
 Content-Type: application/json
 
 
 ### /mul
-GET http://localhost:8080/mul?a=1&b=2
+GET http://localhost:8093/mul?a=1&b=2
 Content-Type: application/json
 
 ### /div
-GET http://localhost:8080/div?a=1&b=2
+GET http://localhost:8093/div?a=1&b=2
 Content-Type: application/json
 
 

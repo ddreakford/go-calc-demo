@@ -3,11 +3,12 @@ package main
 import (
 	"crypto/tls"
 	"fmt"
-	"github.com/go-resty/resty/v2"
 	"os"
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/go-resty/resty/v2"
 )
 
 var restyClient = resty.New().SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
@@ -33,7 +34,7 @@ func call(path string, a, b string) (*ResultResponse, error) {
 		"a": a,
 		"b": b,
 	}).SetResult(result).
-		Get("http://localhost:8080" + path)
+		Get("http://localhost:8093" + path)
 
 	if err != nil {
 		return nil, err
