@@ -1,4 +1,4 @@
-module github.com/liornabat-sealights/go-calc-demo
+module github.com/ddreakford/go-calc-demo/go-calc-demo
 
 go 1.19
 
