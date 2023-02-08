@@ -14,3 +14,9 @@ go-calc-demo
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# SeaLights files
+sealights/
+__sealights__/
+build.json
+slcmd_config.json
