@@ -4,7 +4,7 @@
 
 1. Install Go SDK
 2. Clone Repository
-3. Run `go build -o go-calc-demo.exe`
+3. Run `go build`
 
 
 ## Api Endpoints
