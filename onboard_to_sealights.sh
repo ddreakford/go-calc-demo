@@ -21,6 +21,10 @@ rm slcli-${OS_ARCH}.tar.gz
 cp $AGENT_TOKEN_FILE sealights/
 
 # [Optional] Set debug level (debug | info | error)
+#
+# If SEALIGHTS_LOG_LEVEL=debug, this file will be created
+# ./.sealights-debug-log.json
+#
 export SEALIGHTS_LOG_LEVEL=info
 
 # Initialize the SeaLights CLI
