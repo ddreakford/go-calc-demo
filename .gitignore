@@ -20,3 +20,4 @@ sealights/
 __sealights__/
 build.json
 slcmd_config.json
+.sealights*.json
