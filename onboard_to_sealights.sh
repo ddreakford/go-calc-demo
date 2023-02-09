@@ -11,14 +11,17 @@ wget -nv https://agents.sealights.co/slcli/latest/slcli-${OS_ARCH}.tar.gz && \
     tar --cd sealights -xf slcli-${OS_ARCH}.tar.gz
 
 # Two executables are included with agent:
-# - slcli - CLI tool
-# - slgoagent - the agent
+#  ./sealights/slcli - CLI tool
+#  ./sealights/slgoagent - the agent
 
 rm slgoagent-${OS_ARCH}.tar.gz
 rm slcli-${OS_ARCH}.tar.gz
 
 # Add an agent token
 cp $AGENT_TOKEN_FILE sealights/
+
+# [Optional] Set debug level (debug | info | error)
+export SEALIGHTS_LOG_LEVEL=info
 
 # Initialize the SeaLights CLI
 ./sealights/slcli config init \
@@ -42,5 +45,15 @@ mv buildSessionId.txt sealights
 #    --scmBaseUrl <base-url> \
 #    --scmProvider github
 
-# Run tests
-go test
+# Run unit tests
+go test -v
+
+# [Optional] Run manual tests
+# 1. Build the service (go build)
+# 2. Start the service (./go-calc-demo)
+# 3. Report the test start (via SL UI)
+# 4. Hit the service endpoint(s) (per test script)
+# 5. Report the test end (via SL UI)
+
+# Restore files
+./sealights/slgoagent clean ./build.json
