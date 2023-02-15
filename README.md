@@ -43,18 +43,12 @@ Demo with "pre made" code changes (to show Modified Coverage and Quality Risks)
  - Adds a new func to the calc file - `Power`
  - Changes the `Add` func
 
+## Unit Tests
+
+    go test -v
 
 ## Instrumentation, scanning and test monitoring
 See [onboard_to_sealights.sh](https://github.com/ddreakford/go-calc-demo/blob/main/onboard_to_sealights.sh)
 
 Via CI: [Jenkinsfile](https://github.com/ddreakford/go-calc-demo/blob/main/Jenkinsfile)
-
-
-## Unit Tests
-
-    go test -v
-
-
-
-
 
