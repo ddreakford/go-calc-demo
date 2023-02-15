@@ -12,6 +12,9 @@ pipeline {
         SL_APP_NAME = "go-calc-demo-DD"
         SL_BUILD_NAME = "1.0.${BUILD_NUMBER}"
     }
+    tools {
+        go '1.20.1'
+    }
 
     stages {
         stage('SCM (Git)') {
