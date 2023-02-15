@@ -40,7 +40,7 @@ export BUILD_TIME=`date +"%y%m%d_%H%M"`
   --build "1.${BUILD_TIME}"
 mv buildSessionId.txt sealights
 
-# Scan and instrument the application 
+# Scan and instrument the service 
 ./sealights/slcli scan  \
     --bsid sealights/buildSessionId.txt  \
     --path-to-scanner ./sealights/slgoagent \
