@@ -45,6 +45,7 @@ mv buildSessionId.txt sealights
     --bsid sealights/buildSessionId.txt  \
     --path-to-scanner ./sealights/slgoagent \
     --workspacepath "." \
+    --fail-build \
     --scm git
 #    --scmBaseUrl <base-url> \
 #    --scmProvider github
