@@ -1,0 +1,20 @@
+# Create image for Test/QA with monitoring by SeaLights
+
+FROM golang:1.20.1
+
+# Base dir for app and SeaLights libs
+WORKDIR /usr/src/go-calc-demo
+
+# Add app/service
+# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
+
+COPY . .
+RUN go build -v -o /usr/local/bin/go-calc-demo ./...
+EXPOSE      8093
+
+# Add Sealights bsid and token
+COPY        sealights/* /usr/local/bin
+
+CMD ["go-calc-demo"]

@@ -86,17 +86,17 @@ pipeline {
                 '''
             }
         }
-        // stage('Deploy to QA') {
-        //     steps {
-        //         script {
-        //             // Create/start a container with SeaLights monitoring
-        //             String APP_IMAGE_SPEC = "${DOCKER_REPO}/${APP_IMAGE_NAME}:${BUILD_NUMBER}"
-        //             sh """
-        //                 docker build -f Dockerfile.qa -t ${APP_IMAGE_SPEC} .
-        //                 docker run --name ${APP_IMAGE_NAME} -d -p 8093:8093 ${APP_IMAGE_SPEC}
-        //             """
-        //         }
-        //     }
-        // }
+        stage('Deploy to QA') {
+            steps {
+                script {
+                    // Create/start a container with SeaLights monitoring
+                    String APP_IMAGE_SPEC = "${DOCKER_REPO}/${APP_IMAGE_NAME}:${BUILD_NUMBER}"
+                    sh """
+                        docker build -f Dockerfile.qa -t ${APP_IMAGE_SPEC} .
+                        docker run --name ${APP_IMAGE_NAME} -d -p 8093:8093 ${APP_IMAGE_SPEC}
+                    """
+                }
+            }
+        }
     }
 }
