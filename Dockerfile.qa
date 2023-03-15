@@ -16,5 +16,6 @@ EXPOSE      8093
 
 # Add Sealights bsid and token
 COPY        sealights/* /usr/local/bin
+ENV         SEALIGHTS_LOG_LEVEL=info
 
 CMD ["go-calc-demo"]
